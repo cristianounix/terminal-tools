@@ -275,7 +275,6 @@ the presence of a common field.
      of whitespace). For instance, `join -t'`<br/>
      `' FILE1 FILE2` lists all common lines, assuming the two files are sorted.
 
-
 ## Typically two or more input streams
 
 #### $ paste
@@ -321,3 +320,41 @@ Like `diff`, but for three files.
 [`wc`]: https://en.wikipedia.org/wiki/Wc_(Unix)
 [`yes`]: https://en.wikipedia.org/wiki/Yes_%28Unix%29
 [`zcat`]: https://en.wikipedia.org/wiki/Zcat
+
+
+
+## Sniffing network traffic
+
+### $ ngrep
+
+    $ ngrep -q -W byline port 8090
+
+    Ex:
+        proxy container
+        ngrep -q -W byline port 8090
+
+[ngrep](https://github.com/jpr5/ngrep)
+
+
+### $ httpry
+
+    $ httpry -v
+
+    Ex:
+        httpry -i eth3 -n 3
+
+[httpry](https://github.com/jbittel/httpry)
+[httpry](http://dumpsterventures.com/jason/httpry/)
+
+### $ tcpflow
+
+    $ tcpflow 
+
+    Ex:
+
+       tcpflow -p -c -i eth0 port 80 | grep -oE '(GET|POST|HEAD) .* HTTP/1.[01]|Host: .*'
+
+[tcpflow](https://github.com/simsong/tcpflow)
+
+
+
