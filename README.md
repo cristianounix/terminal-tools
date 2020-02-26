@@ -325,6 +325,14 @@ Like `diff`, but for three files.
 
 ## Sniffing network traffic
 
+
+### $ tcpdump
+
+    $ tcpdump -ni en1
+    
+    Ex:
+         sudo tcpdump -ni en1 'dst 100.10.10.5 and tcp and port http'
+         
 ### $ ngrep
 
     $ ngrep -q -W byline port 8090
@@ -355,4 +363,6 @@ Like `diff`, but for three files.
        tcpflow -p -c -i eth0 port 80 | grep -oE '(GET|POST|HEAD) .* HTTP/1.[01]|Host: .*'
 
 [tcpflow](https://github.com/simsong/tcpflow)
+
+
 
